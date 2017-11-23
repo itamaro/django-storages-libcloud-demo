@@ -157,7 +157,7 @@ LIBCLOUD_PROVIDERS = {
         'user': os.environ.get('COS_API_KEY_ID', ''),
         'key': os.environ.get('COS_API_SECRET_KEY', ''),
         'region': os.environ.get('COS_REGION', ''),
-        'app_id': int(os.environ.get('COS_APP_ID', '')),
+        'app_id': int(os.environ.get('COS_APP_ID', '0')),
         'bucket': os.environ.get('COS_BUCKET_NAME', ''),
     }
 }
