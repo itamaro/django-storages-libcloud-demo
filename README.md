@@ -1,6 +1,6 @@
-# Django Storages S3Boto3 Demo
+# Django Storages Libcloud Demo
 
-A demo Django app using django-storages with S3Boto3 backend to display images from S3 bucket, uploaded from admin interface.
+A demo Django app using django-storages with Libcloud backend to display images from S3 or Tencent COS bucket, uploaded from admin interface.
 
 ## Running Locally
 
@@ -18,9 +18,15 @@ $ pipenv run python manage.py migrate
 $ pipenv run python manage.py createsuperuser
 $ pipenv run python manage.py collectstatic
 $ cat <<EOF >.env
+LIBCLOUD_PROVIDER="<aws-s3 OR tencent-cos>"
 AWS_ACCESS_KEY="<Access-Key>"
 AWS_SECRET_KEY="<Secret-Key>"
 AWS_S3_BUCKET="S3-Bucket"
+COS_API_KEY_ID="<COS-Key-ID>"
+COS_API_SECRET_KEY="<COS-Secret-Key>"
+COS_APP_ID=<App-ID>
+COS_REGION="<COS-Region>"
+COS_BUCKET_NAME="<COS-Bucket>"
 EOF
 
 $ pipenv run heroku local -p 8000 web
@@ -37,9 +43,15 @@ $ git push heroku master
 $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
 $ heroku config:set \
+    LIBCLOUD_PROVIDER="<aws-s3 OR tencent-cos>" \
     AWS_ACCESS_KEY="<Access-Key>" \
     AWS_SECRET_KEY="<Secret-Key>" \
-    AWS_S3_BUCKET="S3-Bucket"
+    AWS_S3_BUCKET="S3-Bucket" \
+    COS_API_KEY_ID="<COS-Key-ID>"
+    COS_API_SECRET_KEY="<COS-Secret-Key>" \
+    COS_APP_ID=<App-ID> \
+    COS_REGION="<COS-Region>" \
+    COS_BUCKET_NAME="<COS-Bucket>"
 $ heroku open
 ```
 or
@@ -48,7 +60,7 @@ or
 
 ## Using the Demo
 
-Using the admin interface (with the credentials of the superuser created)
+Using the admin interface (with the credentials of the superuser created), create "UploadedImage" records, uploading images from your local machine, then view the images ob the home page of the app.
 
 ## Documentation
 
