@@ -7,8 +7,8 @@ A demo Django app using django-storages with Libcloud backend to display images 
 Make sure you have Python [installed properly](http://install.python-guide.org).  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
-$ git clone git@github.com:itamaro/django-storages-boto3-demo.git
-$ cd django-storages-boto3-demo
+$ git clone git@github.com:itamaro/django-storages-libcloud-demo.git
+$ cd django-storages-libcloud-demo
 
 $ pipenv install
 
